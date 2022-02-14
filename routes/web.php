@@ -20,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/addRack', [App\Http\Controllers\RackController::class,'index'])->name('add.Rack');
+
+Route::get('/addStock', [App\Http\Controllers\ManageStockController::class,'index'])->name('add.Stock');
+
+Route::get('/showRack', [App\Http\Controllers\RackController::class,'view'])->name('showRack');
+
+Route::get('/showStock', [App\Http\Controllers\ManageStockController::class,'view'])->name('showStock');
+
+Route::get('/deleteStock/{id}' ,[App\Http\Controllers\ManageStockController::class,'delete'])->name('deleteStock');
+
+Route::get('/editStock/{id}', [App\Http\Controllers\ManageStockController::class,'edit'])->name('editStock');
+
+Route::get('/viewStock', [App\Http\Controllers\StockController::class,'viewStock'])->name('viewStock');
